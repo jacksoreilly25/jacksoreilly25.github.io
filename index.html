@@ -116,6 +116,57 @@
     }
     .hero-content { position: relative; z-index: 1; max-width: 800px; }
 
+/* HERO LAYOUT WITH HEADSHOT */
+.hero-layout {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 330px;
+  justify-self: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.12);
+  background: var(--surface);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-photo {
+    max-width: 240px;
+    justify-self: start;
+  }
+}
+
     .hero-tag {
       display: inline-block;
       border: 1px solid var(--accent);
@@ -485,27 +536,51 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
+  
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-layout">
+    <!-- LEFT: Name and introduction -->
     <div class="hero-content">
-      <div class="hero-tag">🎓 MIS Student · Class of 2028</div>
+      <div class="hero-tag">
+        🎓 MIS Student · Class of 2028
+      </div>
+
       <h1>
-        Jack<br/>
-        <em>O'Reilly</em><br/>
-        </span>
+        Jack<br />
+        <em>O'Reilly</em>
       </h1>
+
       <p class="hero-sub">
-        Management Information Systems student at The University of Georgia — building at the intersection of business and technology. Currently exploring data, systems, and everything in between.
+        Management Information Systems student at The
+        University of Georgia — building at the intersection
+        of business and technology. Currently exploring data,
+        systems, and everything in between.
       </p>
+
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-        <img src="IMG_1075.PNG" alt="Jack O'Reilly headshot" class="headshot">
+        <a href="#projects" class="btn btn-primary">
+          View My Work
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          Get In Touch
+        </a>
       </div>
     </div>
-  </section>
+
+    <!-- RIGHT: Headshot -->
+    <div class="hero-photo">
+      <img
+        src="./IMG_1075.PNG"
+        alt="Jack O'Reilly headshot"
+      />
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
   <section id="about">
