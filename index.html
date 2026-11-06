@@ -293,11 +293,10 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
-    .project-card {
-      border: 1px solid var(--border);
-      background: var(--card);
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
+        .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
     .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
     .project-thumb {
@@ -309,6 +308,7 @@
     .p1 { background: #E9E1CF; }
     .p2 { background: #E2E6D9; }
     .p3 { background: #EFE5D3; }
+    .p4 { background: #DDE5DA; }
     .project-body { padding: 1.5rem; }
     .project-status {
       font-size: 0.68rem;
@@ -424,6 +424,7 @@
       .hero-photo { justify-self: start; }
       .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -577,6 +578,23 @@
             <span class="tech-tag">HTML</span>
             <span class="tech-tag">CSS</span>
             <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+            <div class="project-card reveal">
+        <div class="project-thumb p4">🌿</div>
+        <div class="project-body">
+          <div class="project-status status-live">● Live</div>
+        <div class="project-name">
+  <a href="https://jacksoreilly25.github.io/oreilly-and-co/" target="_blank" rel="noopener">O'Reilly &amp; Co. Brand &amp; Website ↗</a>
+</div>
+          
+          <p class="project-desc">Built a brand identity and responsive website for my consulting brand, covering the color palette, typography, monogram, LinkedIn graphics, and a site hosted on GitHub Pages.</p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">Branding</span>
+            <span class="tech-tag">GitHub Pages</span>
           </div>
         </div>
       </div>
