@@ -61,7 +61,8 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--accent2); }
-
+    .nav-links a:hover { color: var(--accent2); }
+    .nav-links a.active { color: var(--accent2); }
     /* HERO */
     .hero {
       min-height: 100vh;
@@ -477,7 +478,7 @@
       <div class="about-stats reveal">
         <div class="stat-card"><div class="stat-num">2028</div><div class="stat-label">Expected Graduation</div></div>
         <div class="stat-card"><div class="stat-num">MIS</div><div class="stat-label">Major</div></div>
-        <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Projects Built</div></div>
+        <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Projects Built</div></div>
         <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Things to Learn</div></div>
       </div>
     </div>
@@ -613,6 +614,20 @@
       });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Highlight the nav link for the section on screen
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(a =>
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current)
+  );
+});
   </script>
 </body>
 </html>
